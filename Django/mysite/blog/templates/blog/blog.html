@@ -1,0 +1,14 @@
+<HTML>
+    <head>
+        <title>IC2140's Blog</title>
+    </head>
+    <body>
+        <h1>IC2140's Blog</h1>
+        {% for entry in entries %}
+        <p>
+        <strong>{{ entry.date_posted }} </strong>
+        <br>{{ entry.text }}
+        </p>
+        {% endfor %}
+    </body>
+</HTML>
