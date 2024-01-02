@@ -1,0 +1,140 @@
+<!doctype html>
+<HTML>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+        <title>Online Inventory Management System</title>
+        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                
+                align-items: center;
+                justify-content: center;
+                font-family: 'Zilla Slab', serif;
+            }
+            h1, h2 {
+                color: rgb(247, 184, 255);
+            }
+            table {
+                background-color: rgb(211, 252, 255);
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="display-3 p-3 mb-2">Online Inventory Management System</h1>
+
+        <div class = "table-responsive">
+            <h2 class="p-2 mb-2 bg-primary text-white">Inventory</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Inventory No</th>
+                            <th>Location</th>
+                            <th>End User</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    {% for item in entries %}
+                    <tr>
+                        <td>{{ item.Inventory_no }} </td>
+                        <td>{{ item.Location }} </td>
+                        <td>{{ item.End_user }} </td>
+                        <td>{{ item.Description }} </td>
+                        <td>{{ item.Price }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class = "table-responsive">
+            <h2 class="p-2 mb-2 bg-primary text-white">Price more than $10000</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Inventory No</th>
+                            <th>Location</th>
+                            <th>End User</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    {% for item in entries1 %}
+                    <tr>
+                        <td>{{ item.Inventory_no }} </td>
+                        <td>{{ item.Location }} </td>
+                        <td>{{ item.End_user }} </td>
+                        <td>{{ item.Description }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class = "table-responsive">
+            <h2 class="p-2 mb-2 bg-primary text-white">Purchase date more than 5 years</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Inventory No</th>
+                            <th>Location</th>
+                            <th>End User</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    {% for item in entries2 %}
+                    <tr>
+                        <td>{{ item.Inventory_no }} </td>
+                        <td>{{ item.Location }} </td>
+                        <td>{{ item.End_user }} </td>
+                        <td>{{ item.Description }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class = "table-responsive">
+            <h2 class="p-2 mb-2 bg-primary text-white">Location</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    {% for item in loc_count %}
+                    <tr>
+                        <td>{{ item.Location }} </td>
+                        <td>{{ item.total_inventory }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class = "table-responsive">
+            <h2 class="p-2 mb-2 bg-primary text-white">User</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    {% for item in user_count %}
+                    <tr>
+                        <td>{{ item.End_user }} </td>
+                        <td>{{ item.total_user }} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </body>
+</HTML>

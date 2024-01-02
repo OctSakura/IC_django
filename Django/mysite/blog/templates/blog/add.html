@@ -1,0 +1,14 @@
+<HTML>
+    <head>
+        <title>IC2140's Assignment 1</title>
+    </head>
+    <body>
+        <h1>IC2140's Blog</h1>
+        <h2>Add new Entry</h2>
+        <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.text }}
+        <button>Submit</button>
+        </form>
+    </body>
+</HTML>
